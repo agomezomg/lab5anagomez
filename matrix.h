@@ -25,7 +25,7 @@ class matrix
 		int getCol();
 		int getSize();
 		string toString()const;
-		const matrix operator()(const matrix&)const;
+		const matrix operator()(); //transpose
 		const matrix operator+(const matrix&)const; //add
 		const matrix operator-(const matrix&)const; //subtract
 		const matrix operator-()const; //unitary subtract

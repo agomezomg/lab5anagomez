@@ -112,3 +112,57 @@ string matrix::toString()const {
         
     return ss.str();
 }
+
+const matrix matrix::operator()(){
+	matrix retval(col, row);
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < col; ++j)
+		{
+			retval.pMatrix[j][i] = pMatrix[i][j];
+		}
+	}
+	return retval;
+}
+
+bool matrix::operator==(matrix& r){
+	bool same = false;
+	int count = 0;
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; i < col; ++j)
+		{
+			if (r.pMatrix[i][j] == pMatrix[i][j])
+			{
+				count++;
+			}
+		}
+	}
+
+	if (count == row*col)
+	{
+		same = true;
+	}
+    return same;
+}
+
+bool matrix::operator!=(matrix& r){
+    bool same = false;
+	int count = 0;
+	for (int i = 0; i < row; ++i) {
+	
+		for (int j = 0; j < col; ++j)
+		{
+			if (r.pMatrix[i][j] != pMatrix[i][j])
+			{
+				count++;
+			}
+		}
+	}
+
+	if (count == row*col)
+	{
+		same = true;
+	}
+    return same;
+}

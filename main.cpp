@@ -88,18 +88,18 @@ int main()
 
 			if (matrixList[position1] -> getRow() == matrixList[position2] -> getCol())
 			{
-				/* code */
+				cout << "en construccion \n";
 			}
 		} else if (choice == 6) //extraccion de flujo
 		{
-			cout << "Lista 1: ";
+			cout << "Lista 1: \n";
 			for (int i = 0; i < matrixList.size(); ++i)
 			{
 				matrixList[i] -> toString();
 				cout << endl;
 			}
 
-			cout << "Resultados: ";
+			cout << "Resultados: \n";
 			for (int i = 0; i < matrixList2.size(); ++i)
 			{
 				matrixList2[i] -> toString();
@@ -107,13 +107,43 @@ int main()
 			}
 		} else if (choice == 7) //transpuesta
 		{
-			
+			int position;
+			cout << "Posicion: ";
+			cin >> position;
+
+			matrix nMatrix = matrixList[position]();
+
 		} else if (choice == 8) //comparacion
 		{
-		
+			int position1;
+			int position2;
+			cout << "P1: ";
+			cin >> position1;
+			cout << "P2: ";
+			cin >> position2;
+
+			if (*matrixList[position1] == *matrixList[position2])
+			{
+				cout << "son iguales \n";
+			} else {
+				cout << "no son iguales \n";
+			}
 		} else if (choice == 9) //diferencia
 		{
-		
+			int position1;
+			int position2;
+
+			cout << "P1: ";
+			cin >> position1;
+			cout << "P2: ";
+			cin >> position2;
+
+			if (*matrixList[position1] == *matrixList[position2])
+			{
+				cout << "no son iguales \n";
+			} else {
+				cout << "son iguales \n";
+			}
 		} else if (choice == 10) //determinante
 		{
 
