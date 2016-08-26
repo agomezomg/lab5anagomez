@@ -3,7 +3,7 @@
 #include "matrix.h"
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
 	int choice;
 	vector<matrix*> matrixList;
@@ -28,7 +28,10 @@ int main(int argc, char const *argv[])
 			cout << "Ingrese no. de columnas: ";
 			cin >> col;
 
-			matrixList.push_back(new matrix(row, col));
+			matrix* nMatrix = new matrix(row, col);
+			nMatrix -> fillMatrix();
+			matrixList.push_back(nMatrix);
+
 			cout << "Nueva matrix agregada. \n";
 		} else if (choice == 2) //sumar
 		{
@@ -42,7 +45,9 @@ int main(int argc, char const *argv[])
 
 			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
 			{
-		//		matrixList[position1] + matrixList[position2];
+				matrix niu = *matrixList[position1] + *matrixList[position2];
+				
+
 			}
 		} else if (choice == 3) //menos unario
 		{
@@ -64,7 +69,7 @@ int main(int argc, char const *argv[])
 
 			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
 			{
-		//		matrixList[position1] - matrixList[position2];
+
 			}	
 		} else if (choice == 5) //multiplicar matrices
 		{

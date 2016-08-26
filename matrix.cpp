@@ -23,6 +23,10 @@ matrix::matrix(int row, int col){
 	}*/
 }
 
+matrix::matrix(const matrix) {
+
+}
+
 matrix::~matrix() {
 }
 
@@ -53,8 +57,7 @@ void matrix::fillMatrix () {
 }
 
 const matrix matrix::operator+(const matrix& r)const{
-
-	matrix retval((this->));
+	matrix retval(row, col);
 
 	for (int i = 0; i < row; ++i)
 	{
@@ -68,3 +71,4 @@ const matrix matrix::operator+(const matrix& r)const{
     //matrix retval((this->numerador*r.denominador) + (this->denominador*r.numerador), this->denominador*r.denominador);
     return retval;
 }
+
