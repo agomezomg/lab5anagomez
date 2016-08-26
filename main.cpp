@@ -7,6 +7,7 @@ int main()
 {
 	int choice;
 	vector<matrix*> matrixList;
+	vector<matrix*> matrixList2;
 
 	do {
 		cout << "1. Agregar matriz. \n";
@@ -46,8 +47,8 @@ int main()
 			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
 			{
 				matrix niu = *matrixList[position1] + *matrixList[position2];
-				
-
+				matrix* niu2 = new matrix(niu);
+				matrixList2.push_back(niu2);
 			}
 		} else if (choice == 3) //menos unario
 		{
@@ -56,7 +57,9 @@ int main()
 			cout << "Ingrese la posicion: ";
 			cin >> position;
 
-			matrixList[position];
+			matrix negMatrix = -*matrixList[position];
+			matrix* niuNegM = new matrix(negMatrix);
+			matrixList2.push_back(niuNegM);
 		} else if (choice ==4) //restar matrices
 		{
 			int position1;
@@ -69,7 +72,9 @@ int main()
 
 			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
 			{
-
+				matrix niu = *matrixList[position1] - *matrixList[position2];
+				matrix* niu2 = new matrix(niu);
+				matrixList2.push_back(niu2);
 			}	
 		} else if (choice == 5) //multiplicar matrices
 		{
@@ -87,10 +92,22 @@ int main()
 			}
 		} else if (choice == 6) //extraccion de flujo
 		{
+			cout << "Lista 1: ";
+			for (int i = 0; i < matrixList.size(); ++i)
+			{
+				matrixList[i] -> toString();
+				cout << endl;
+			}
 
+			cout << "Resultados: ";
+			for (int i = 0; i < matrixList2.size(); ++i)
+			{
+				matrixList2[i] -> toString();
+				cout << endl;
+			}
 		} else if (choice == 7) //transpuesta
 		{
-
+			
 		} else if (choice == 8) //comparacion
 		{
 		

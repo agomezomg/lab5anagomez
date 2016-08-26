@@ -19,15 +19,16 @@ class matrix
 		matrix();
 		matrix(int, int);
 		~matrix();
-		matrix(const matrix)
+		matrix(const matrix&);
 		void fillMatrix();
 		int getRow();
 		int getCol();
 		int getSize();
-		void printMatrix();
-		void printMatrix(int**);
+		string toString()const;
+		const matrix operator()(const matrix&)const;
 		const matrix operator+(const matrix&)const; //add
 		const matrix operator-(const matrix&)const; //subtract
+		const matrix operator-()const; //unitary subtract
 		const matrix operator*(const matrix&)const; //multiply
 		const matrix operator/(const matrix&)const; //divide
 		bool operator==(matrix&); //equal

@@ -1,11 +1,10 @@
 #include "matrix.h"
 #include <string>
-//using std::string;
-
+#include <sstream>
+#include <cmath>
 #include <iostream>
+
 using namespace std;
-//using std::istream;
-//using std::ostream;
 
 matrix::matrix() {
 
@@ -23,7 +22,7 @@ matrix::matrix(int row, int col){
 	}*/
 }
 
-matrix::matrix(const matrix) {
+matrix::matrix(const matrix&) {
 
 }
 
@@ -64,11 +63,52 @@ const matrix matrix::operator+(const matrix& r)const{
 		for (int j = 0; j < col; ++j)
 		{
 			retval.pMatrix[i][j] = pMatrix[i][j] + r.pMatrix[i][j];
-			//(this->retval[i][j]*r.denominador) + (this->denominador*r.numerador), this->denominador*r.denominador);
 		}
 	}
-
-    //matrix retval((this->numerador*r.denominador) + (this->denominador*r.numerador), this->denominador*r.denominador);
-    return retval;
+	return retval;
 }
 
+const matrix matrix::operator-(const matrix& r)const{
+	matrix retval(row, col);
+
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < col; ++j)
+		{
+			retval.pMatrix[i][j] = pMatrix[i][j] - r.pMatrix[i][j];
+		}
+	}
+	return retval;
+}
+
+const matrix matrix::operator -()const{
+	matrix retval(row, col);
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < col; ++j)
+		{
+			retval.pMatrix[i][j] = -pMatrix[i][j];
+		}
+	}
+	return retval;
+}
+
+ostream& operator<<(ostream& out, const matrix& r){
+    out << r.toString();
+    return out;
+}
+
+string matrix::toString()const {
+	stringstream ss;
+
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < col; ++j)
+		{
+			ss << pMatrix[i][j] << " ";
+		}
+		ss << "\n";
+	}
+        
+    return ss.str();
+}
