@@ -113,7 +113,7 @@ string matrix::toString()const {
     return ss.str();
 }
 
-const matrix matrix::operator()(){
+const matrix matrix::operator++(){
 	matrix retval(col, row);
 	for (int i = 0; i < row; ++i)
 	{
@@ -166,3 +166,4 @@ bool matrix::operator!=(matrix& r){
 	}
     return same;
 }
+

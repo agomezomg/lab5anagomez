@@ -25,12 +25,11 @@ class matrix
 		int getCol();
 		int getSize();
 		string toString()const;
-		const matrix operator()(); //transpose
+		const matrix operator++(); //transpose
 		const matrix operator+(const matrix&)const; //add
 		const matrix operator-(const matrix&)const; //subtract
 		const matrix operator-()const; //unitary subtract
 		const matrix operator*(const matrix&)const; //multiply
-		const matrix operator/(const matrix&)const; //divide
 		bool operator==(matrix&); //equal
 		bool operator!=(matrix&); //different
 };

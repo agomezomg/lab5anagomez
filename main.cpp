@@ -10,15 +10,15 @@ int main()
 	vector<matrix*> matrixList2;
 
 	do {
-		cout << "1. Agregar matriz. \n";
-		cout << "2. Sumar matrices. \n";
-		cout << "3. Menos unario. \n";
-		cout << "4. Restar matrices. \n";
+		cout << "1. Agregar matriz. \n"; //ya
+		cout << "2. Sumar matrices. \n"; //ya
+		cout << "3. Menos unario. \n"; //ya
+		cout << "4. Restar matrices. \n"; //ya
 		cout << "5. Multiplicar matrices. \n";
-		cout << "6. Extraccion de flujo. \n";
-		cout << "7. Transpuesta. \n";
-		cout << "8. Comparacion. \n";
-		cout << "9. Diferencia. \n";
+		cout << "6. Extraccion de flujo. \n"; //ya
+		cout << "7. Transpuesta. \n"; //ya
+		cout << "8. Comparacion. \n"; //ya
+		cout << "9. Diferencia. \n"; //ya
 		cout << "10. Determinante. \n";
 
 		if (choice == 1)
@@ -111,7 +111,7 @@ int main()
 			cout << "Posicion: ";
 			cin >> position;
 
-			matrix nMatrix = matrixList[position]();
+			matrix nMatrix = *matrixList[position]++;
 
 		} else if (choice == 8) //comparacion
 		{
