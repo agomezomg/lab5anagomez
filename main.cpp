@@ -42,17 +42,44 @@ int main(int argc, char const *argv[])
 
 			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
 			{
-				matrixList[position1] + matrixList[position2];
+		//		matrixList[position1] + matrixList[position2];
 			}
 		} else if (choice == 3) //menos unario
 		{
+			int position;
 
+			cout << "Ingrese la posicion: ";
+			cin >> position;
+
+			matrixList[position];
 		} else if (choice ==4) //restar matrices
 		{
+			int position1;
+			int position2;
 
+			cout << "Ingrese posicion de la primer matriz: ";
+			cin >> position1;
+			cout << "Ingrese posicion de la segunda matriz: ";
+			cin >> position2;
+
+			if (matrixList[position1] -> getSize() == matrixList[position2] -> getSize())
+			{
+		//		matrixList[position1] - matrixList[position2];
+			}	
 		} else if (choice == 5) //multiplicar matrices
 		{
+			int position1;
+			int position2;
 
+			cout << "Ingrese posicion de la primer matriz: ";
+			cin >> position1;
+			cout << "Ingrese posicion de la segunda matriz: ";
+			cin >> position2;
+
+			if (matrixList[position1] -> getRow() == matrixList[position2] -> getCol())
+			{
+				/* code */
+			}
 		} else if (choice == 6) //extraccion de flujo
 		{
 
@@ -72,7 +99,7 @@ int main(int argc, char const *argv[])
 			cout << "Bye. \n";
 		}
 
-	} while (op > 0 && op < 11);
+	} while (choice > 0 && choice < 11);
 
 	for (int i = 0; i < matrixList.size(); ++i)
 	{

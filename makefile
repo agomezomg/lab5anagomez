@@ -1,11 +1,11 @@
-clases:	main.o matrixes.o
-	g++ main.o matrixes.o -o clases
+clases:	main.o matrix.o
+	g++ main.o matrix.o -o clases
 
-clases.o: clases.cpp matrixes.h
+clases.o: clases.cpp matrix.h
 	g++ -c main.cpp
 
-matrixes: matrixes.h matrixes.cpp
-	g++ -c matrixes.cpp
+matrix: matrix.h matrix.cpp
+	g++ -c matrix.cpp
 
 clean:
-	rm *.o matrixes 
+	rm *.o matrix 
