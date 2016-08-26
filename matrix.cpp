@@ -167,3 +167,21 @@ bool matrix::operator!=(matrix& r){
     return same;
 }
 
+const matrix matrix::operator*(const matrix& r) {
+	matrix temp = new matrix(row, col);
+	int rowss = row;
+	int colss = r.getCol();
+
+	for (int i = 0; i < row; ++i)
+	{
+		for (int j = 0; j < colss; ++j)
+		{
+			for (int k = 0; k < col; ++k)
+			{
+				temp.pMatrix[i][j] = temp.pMatrix[i][j] + pMatrix[i][k] * r.pMatrix[k][j];
+			}
+		}
+	}
+
+	return temp;
+}
