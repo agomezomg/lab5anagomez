@@ -167,10 +167,10 @@ bool matrix::operator!=(matrix& r){
     return same;
 }
 
-const matrix matrix::operator*(const matrix& r) {
-	matrix temp = new matrix(row, col);
+const matrix matrix::operator * (const matrix& r) {
+	matrix temp(row, col);
 	int rowss = row;
-	int colss = r.getCol();
+	int colss = r.col;
 
 	for (int i = 0; i < row; ++i)
 	{
