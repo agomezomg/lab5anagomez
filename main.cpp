@@ -112,7 +112,8 @@ int main()
 			cin >> position;
 
 			matrix nMatrix = *matrixList[position]++;
-
+			matrix* niu3 = new matrix(nMatrix);
+			matrixList2.push_back(niu3);
 		} else if (choice == 8) //comparacion
 		{
 			int position1;

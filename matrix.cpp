@@ -182,6 +182,5 @@ const matrix matrix::operator * (const matrix& r) {
 			}
 		}
 	}
-
 	return temp;
 }
