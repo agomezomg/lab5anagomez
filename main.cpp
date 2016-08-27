@@ -19,7 +19,9 @@ int main()
 		cout << "7. Transpuesta. \n"; //ya
 		cout << "8. Comparacion. \n"; //ya
 		cout << "9. Diferencia. \n"; //ya
-		cout << "10. Determinante. \n";
+		cout << "10. Determinante. \n"; //ya
+
+		cin >> choice;
 
 		if (choice == 1)
 		{
