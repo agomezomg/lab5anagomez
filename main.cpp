@@ -14,7 +14,7 @@ int main()
 		cout << "2. Sumar matrices. \n"; //ya
 		cout << "3. Menos unario. \n"; //ya
 		cout << "4. Restar matrices. \n"; //ya
-		cout << "5. Multiplicar matrices. \n";
+		cout << "5. Multiplicar matrices. \n"; //ya
 		cout << "6. Extraccion de flujo. \n"; //ya
 		cout << "7. Transpuesta. \n"; //ya
 		cout << "8. Comparacion. \n"; //ya
@@ -88,7 +88,9 @@ int main()
 
 			if (matrixList[position1] -> getRow() == matrixList[position2] -> getCol())
 			{
-				cout << "en construccion \n";
+				matrix niu = *matrixList[position1] * *matrixList[position2];
+				matrix* niu2 = new matrix(niu);
+				matrixList2.push_back(niu2);
 			}
 		} else if (choice == 6) //extraccion de flujo
 		{
