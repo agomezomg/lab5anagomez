@@ -86,7 +86,7 @@ int main()
 			cout << "Ingrese posicion de la segunda matriz: ";
 			cin >> position2;
 
-			if (matrixList[position1] -> getRow() == matrixList[position2] -> getCol())
+			if (matrixList[position1] -> getCol() == matrixList[position2] -> getRow())
 			{
 				matrix niu = *matrixList[position1] * *matrixList[position2];
 				matrix* niu2 = new matrix(niu);
@@ -149,7 +149,16 @@ int main()
 			}
 		} else if (choice == 10) //determinante
 		{
+			int position;
+			cout << "Posicion: ";
+			cin >> position;
 
+			if (matrixList[position] -> getRow() == matrixList[position] -> getCol() && matrixList[position] -> getCol() < 4)
+			{
+				matrix nMatrix = *matrixList[position]--;
+				matrix* niu3 = new matrix(nMatrix);
+				matrixList2.push_back(niu3);
+			}
 		} else {
 			cout << "Bye. \n";
 		}

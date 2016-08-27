@@ -29,6 +29,7 @@ class matrix
 		const matrix operator+(const matrix&)const; //add
 		const matrix operator-(const matrix&)const; //subtract
 		const matrix operator-()const; //unitary subtract
+		void operator--(); //determinante
 		const matrix operator * (const matrix&); //multiply
 		bool operator==(matrix&); //equal
 		bool operator!=(matrix&); //different

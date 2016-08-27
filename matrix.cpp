@@ -22,7 +22,7 @@ matrix::matrix(int row, int col){
 	}*/
 }
 
-matrix::matrix(const matrix&) {
+matrix::matrix(const matrix& r) {
 
 }
 
@@ -183,4 +183,19 @@ const matrix matrix::operator * (const matrix& r) {
 		}
 	}
 	return temp;
+}
+
+void matrix::operator--() {
+	double result = 0;
+	if (row == 2)
+	{
+		result = (pMatrix[0][0]*pMatrix[1][1])-(pMatrix[1][1]*pMatrix[0][1]);
+	}
+	else {
+		result = pMatrix[0][0]*pMatrix[1][1]*pMatrix[2][2];
+		result += pMatrix[0][1]*pMatrix[1][2]*pMatrix[0][2];
+		result += pMatrix[0][2]*pMatrix[1][0]*pMatrix[2][1];
+		
+	}
+	cout<<"el resultado es: "<< result <<"\n";
 }
